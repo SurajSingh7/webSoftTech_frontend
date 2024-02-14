@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { experienceCreatePost } from '../services/operations/authAPI';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+
+
+
 
 export const Experience = () => {
 
@@ -77,11 +81,22 @@ export const Experience = () => {
 
   return (
     <div>
-
+       
     <form onSubmit={handleOnSubmit} className="flex w-full flex-col gap-y-4 ">
-        <div className='container my-5 bg-white rounded-lg'>
+
+
+         
+        <div className='container my-5 bg-white rounded-lg w-[96%]'>
+
              <div className='h-5'></div>
-            <table className='table table-bordered  border-l-black'>
+         <div className='flex flex-row  '>
+             <div className=' m-auto bg-white text-black text-2xl mt-6 font-bold '> Work Experience</div>
+          </div>
+               <div className='h-5'></div>
+           
+          
+       
+            <table className='table table-bordered  border-l '>
 
                 <thead>
                     <tr>
@@ -177,7 +192,7 @@ export const Experience = () => {
             </table>
 
             <div className='flex flex-row m-auto'>
-                <button className='btn btn-primary m-auto justify-center text-3xl font-extrabold' type='sumit'>SAVE </button>
+                <button className='btn btn-primary m-auto justify-center text-2xl font-bold' type='sumit'>SAVE </button>
             </div> 
 
         </div>

@@ -11,6 +11,8 @@ import ProfileDropdown from "../core/Auth/ProfileDropDown"
 import {ImCross} from "react-icons/im"
 import SmallScreenNavbar from "./SmallScreenNavbar"
 
+import 'tailwindcss/tailwind.css'
+
 
 
 function Navbar() {

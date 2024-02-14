@@ -86,7 +86,7 @@ function LoginForm() {
       >
         Login
       </button>
-      <div className="h-20"></div>
+      <div className="h-10"></div>
     </form>
 
     </>
