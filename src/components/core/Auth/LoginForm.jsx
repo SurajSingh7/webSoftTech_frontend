@@ -31,7 +31,6 @@ function LoginForm() {
 
   return (
     <>
-    <div className="h-10"></div>
     <form
       onSubmit={handleOnSubmit}
       className="mt-6 flex w-full flex-col gap-y-4"
@@ -80,11 +79,6 @@ function LoginForm() {
             <AiOutlineEye fontSize={24} fill="#AFB2BF" />
           )}
         </span>
-        <Link to="/forgot-password">
-          <p className="mt-1 ml-auto max-w-max text-xs text-blue-100">
-            Forgot Password
-          </p>
-        </Link>
       </label>
       <button
         type="submit"
@@ -92,7 +86,7 @@ function LoginForm() {
       >
         Login
       </button>
-      <div className="h-10"></div>
+      <div className="h-20"></div>
     </form>
 
     </>

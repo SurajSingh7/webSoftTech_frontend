@@ -14,11 +14,21 @@ export const Experience = () => {
    const [data,setData]=useState([{},{},{}]);
 
    const handleAdd=()=>{
+    if(user==null){
+        // toast.success("first login ! please");
+        return;
+     }
+
     setData([...data,{company:"",role:"",firstDate:"",lastDate:""}]);
 
    };
 
    const handleRemove=()=>{
+
+     if(user==null){
+        // toast.success("first login ! please");
+        return;
+     }
     
     if(data.length===1){
         toast.success("One is necessary,thank you")
@@ -31,13 +41,21 @@ export const Experience = () => {
    };
 
    const handleChange=(e,i)=>{
+      
          const tempData=data;
          tempData[i][e.target.name]=e.target.value;
          setData(tempData);
    }
 
    const handleOnSubmit=(e)=>{
+
     e.preventDefault()
+
+     if(user==null){
+        toast.success("first login ! please");
+        return;
+     }
+
     console.log(data);
 
     data.map((obj)=>{
@@ -60,9 +78,10 @@ export const Experience = () => {
   return (
     <div>
 
-    <form onSubmit={handleOnSubmit} className="flex w-full flex-col gap-y-4">
-        <div className='container my-5 bg-white'>
-            <table className='table table-bordered border-4 border-l-black'>
+    <form onSubmit={handleOnSubmit} className="flex w-full flex-col gap-y-4 ">
+        <div className='container my-5 bg-white rounded-lg'>
+             <div className='h-5'></div>
+            <table className='table table-bordered  border-l-black'>
 
                 <thead>
                     <tr>
@@ -92,6 +111,7 @@ export const Experience = () => {
                                   onChange={(e)=>{handleChange(e,index)}}
                                   name='company'
                                   required
+                                  disabled={user?false:true}
                                 />
                             </td>
 
@@ -102,6 +122,7 @@ export const Experience = () => {
                                   onChange={(e)=>{handleChange(e,index)}}
                                   name='role'
                                   required
+                                  disabled={user?false:true}
                               
                               />
                             </td>
@@ -114,6 +135,7 @@ export const Experience = () => {
                                  name='firstDate'
                                  type='date'
                                  required
+                                 disabled={user?false:true}
                                  
                                
                                />
@@ -126,6 +148,7 @@ export const Experience = () => {
                                    name='lastDate'
                                    type='date'
                                    required
+                                   disabled={user?false:true}
                                  
                                  />
                             </td>
@@ -141,20 +164,21 @@ export const Experience = () => {
                 </tbody>
 
       
-                    <div>
-                        <button className='btn btn-success' onClick={handleAdd}>Add</button>
-                    </div>
-                    <div>
-                        <button className='btn btn-success' onClick={handleRemove}>Remove</button>
+                    <div className='flex flex-row'>
+                        <button className='btn btn-success m-2' onClick={handleAdd}>{"+"}Add More</button>
+                        {/* <div className=' w-4'></div> */}
+                        <button className='btn btn-danger m-2' onClick={handleRemove}>Remove</button>
                     </div>
 
-                    <div className='m-auto'>
-                        <button className='btn btn-primary m-auto' type='sumit'>Save</button>
-                    </div> 
+                   
                   
 
 
             </table>
+
+            <div className='flex flex-row m-auto'>
+                <button className='btn btn-primary m-auto justify-center text-3xl font-extrabold' type='sumit'>SAVE </button>
+            </div> 
 
         </div>
     </form>

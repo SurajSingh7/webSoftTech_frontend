@@ -3,7 +3,8 @@ import React from 'react'
 export const AboutUs = () => {
   return (
     <div >
-
+         
+         <div className='h-[20vh]'></div>
         <div className='w-[80%] md:w-[40%] bg-richblack-50 m-auto mt-16 p-6 rounded-md shadow-[10px_-5px_35px_-5px] shadow-blue-200'>
           
             <div className='flex'>
@@ -11,7 +12,7 @@ export const AboutUs = () => {
             </div>
         </div>
 
-        <div className='h-[65vh]'></div>
+        <div className='h-[70vh]'></div>
 
 
 
